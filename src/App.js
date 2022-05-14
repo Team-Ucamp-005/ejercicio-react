@@ -1,23 +1,27 @@
 import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
+import Component from './components/Component/Component';
+import Hello from './components/Hello/Hello';
+import InputText from './components/InputText/InputText';
 
 function App() {
+
+  const [text, setText] = useState('hola')
+  const [color, setColor] = useState('black')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Component />
+      <Hello name="Fredo" /> */}
+
+      <h1 style={{
+        backgroundColor: color
+      }} >
+        {text}
+      </h1>
+      <InputText textValue={setText} />
+
     </div>
   );
 }
