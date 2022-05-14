@@ -8,7 +8,7 @@ const InputText = ({ textValue }) => {
   }
 
   return (
-    <input onChange={(e) => handleChange(e)} type="text" />
+    <input placeholder="Agrega texto" onChange={(e) => handleChange(e)} type="text" />
   )
 }
 
