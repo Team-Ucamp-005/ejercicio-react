@@ -4,11 +4,12 @@ import './App.css';
 import Component from './components/Component/Component';
 import Hello from './components/Hello/Hello';
 import InputText from './components/InputText/InputText';
+import ColorInput from './components/ColorInput/ColorInput';
 
 function App() {
 
   const [text, setText] = useState('hola')
-  const [color, setColor] = useState('black')
+  const [color, setColor] = useState('#000000')
 
   return (
     <div className="App">
@@ -16,10 +17,12 @@ function App() {
       <Hello name="Fredo" /> */}
 
       <h1 style={{
-        backgroundColor: color
+        color: color
       }} >
         {text}
       </h1>
+
+      <ColorInput colorValue={setColor} />
       <InputText textValue={setText} />
 
     </div>
