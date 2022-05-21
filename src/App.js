@@ -7,6 +7,7 @@ import InputText from './components/InputText/InputText';
 import ColorInput from './components/ColorInput/ColorInput';
 import InputSize from './components/InputSize/InputSize';
 import FormPatients from './components/FormPatients/FormPatients';
+import CardPatient from './components/CardPatient/CardPatient';
 
 
 
@@ -42,6 +43,13 @@ function App() {
 
   const [patients, setPatients] = useState([])
 
+
+  const addPatient = (data) => {
+    setPatients(
+      [...patients, data]
+    )
+  }
+
   return (
     <div className="App">
       {/* <Component />
@@ -64,20 +72,15 @@ function App() {
       <InputText textValue={setText} /> */}
 
 
+      <FormPatients formValue={addPatient} />
+
       {
-        pacientes.map((paciente, i) => {
+        patients.map((paciente, i) => {
           return (
-            <div key={i}>
-              <h3>{paciente.nombre}</h3>
-              <p> {paciente.edad} </p>
-              <p>{paciente.altura}</p>
-            </div>
+            <CardPatient data={paciente} key={i} />
           )
         })
       }
-
-
-      <FormPatients />
 
     </div>
   );
